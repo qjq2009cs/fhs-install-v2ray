@@ -14,17 +14,10 @@
 
 # If you modify the following variables, you also need to modify the unit file yourself:
 # You can modify it to /usr/local/lib/v2ray/
-DAT_PATH='/usr/local/share/v2ray/'
+DAT_PATH='/share/v2ray/'
 # You can modify it to /etc/v2ray/
-JSON_PATH='/usr/local/etc/v2ray/'
+JSON_PATH='/etc/v2ray/'
 
-check_if_running_as_root() {
-    # If you want to run as another user, please modify $UID to be owned by this user
-    if [[ "$UID" -ne '0' ]]; then
-        echo "error: You must run this script as root!"
-        exit 1
-    fi
-}
 
 identify_the_operating_system_and_architecture() {
     if [[ "$(uname)" == 'Linux' ]]; then
